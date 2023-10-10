@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/App/App.iml" filepath="$PROJECT_DIR$/App/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calculate/Calculate.iml" filepath="$PROJECT_DIR$/Calculate/Calculate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Remittance/Remittance.iml" filepath="$PROJECT_DIR$/Remittance/Remittance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/boot-camp-gateway.iml" filepath="$PROJECT_DIR$/gateway/boot-camp-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kakaopay.iml" filepath="$PROJECT_DIR$/.idea/kakaopay.iml" />
+    </modules>
+  </component>
+</project>

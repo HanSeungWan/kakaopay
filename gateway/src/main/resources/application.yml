@@ -1,0 +1,84 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: Notification
+          uri: http://localhost:8082
+          predicates:
+            - Path=/notifications/**, 
+        - id: App
+          uri: http://localhost:8083
+          predicates:
+            - Path=/undefined/**, 
+        - id: Calculate
+          uri: http://localhost:0
+          predicates:
+            - Path=/settlementHistories/**, 
+        - id: Remittance
+          uri: http://localhost:0
+          predicates:
+            - Path=/remittanceManagements/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: Notification
+          uri: http://notification:8080
+          predicates:
+            - Path=/notifications/**, 
+        - id: App
+          uri: http://app:8080
+          predicates:
+            - Path=/undefined/**, 
+        - id: Calculate
+          uri: http://calculate:8080
+          predicates:
+            - Path=/settlementHistories/**, 
+        - id: Remittance
+          uri: http://remittance:8080
+          predicates:
+            - Path=/remittanceManagements/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
